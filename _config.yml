@@ -26,6 +26,7 @@ sidebar_categories:
   Concepts:
     - routing
     - bundling
+    - ssr
   Resources:
     - faq
   #   - simple-example
