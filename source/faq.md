@@ -31,7 +31,7 @@ Anything 'front end' that's backed by a GraphQL server. I typically break my pro
 
 - **Microservices**.  Smaller pieces of the stack that do one thing, and do it well. The API server is responsible for talking to this stuff.  Again, ReactQL doesn't really get a look in.
 
-I'd generally recommend a similar layout to keep your code light and maintainable. With that said, if you want Node.js to handle both your front and back-office concerns, there's no reason you couldn't write that stuff here too, and keep it scoped to the server. I just prefer to keep it separate.
+I'd generally recommend a similar layout to keep your code light and maintainable. With that said, if you want Node.js to handle both your front and back-office concerns, there's no reason you couldn't add a GraphQL server to `kit/entry/server.js` and handle your API requests from the same host.
 
 <h2 id="windows">Will this work on Windows?</h2>
 

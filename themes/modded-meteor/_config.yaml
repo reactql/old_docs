@@ -8,5 +8,5 @@ logo:
 nav_links:
   'Main site':
     url: https://reactql.org
-  'Get ReactQL':
+  'Github':
     url: https://github.com/leebenson/reactql
