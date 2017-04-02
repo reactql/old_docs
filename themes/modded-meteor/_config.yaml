@@ -1,0 +1,12 @@
+logo:
+  nav_mobile: images/reactql-logo.svg
+  subbrand: images/logo-apollo-subbrands-developers-space.svg
+  title: ReactQL Docs
+  subtitle: Modern stack for React+GraphQL
+  url: https://reactql.org
+
+nav_links:
+  'Main site':
+    url: https://reactql.org
+  'Get ReactQL':
+    url: https://github.com/leebenson/reactql
