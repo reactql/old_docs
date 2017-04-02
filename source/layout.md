@@ -82,7 +82,7 @@ There are various configuration files that you'll find in the root:
 
 - `.eslintignore`: Files the linter can safely ignore.
 
-- `.gitignore`: Files to ignore when checking in your code.  This is built around the _reactql_ starter kit, but you will probably want to use it as a base for your own code since it ignores the usual Node stuff, along with `dist` and some of the caching folders used by Webpack.
+- `.gitignore`: Files to ignore when checking in your code.  This is built around the ReactQL starter kit, but you will probably want to use it as a base for your own code since it ignores the usual Node stuff, along with `dist` and some of the caching folders used by Webpack.
 
 - `package.json`: NPM packages used in this starter kit.  When you're extending this kit with your own code, you'll probably want to gut out the name, description and repo links and replace with your own. Just keep `dependencies` and `devDependencies` intact for the kit to continue to work.
 
