@@ -23,6 +23,9 @@ sidebar_categories:
     - css
     - modules
     - graphql
+  Concepts:
+    - routing
+    - bundling
   Resources:
     - faq
   #   - simple-example

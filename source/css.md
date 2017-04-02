@@ -66,11 +66,14 @@ a {
 
 Vendor prefixes will automatically be added, so you can write the bare CSS and let PostCSS worry about polyfilling browsers.
 
+> See [CSSNext](http://cssnext.io/) for more details and syntax.
+
 <h2 id="sass">SASS support</h2>
 
 ---
 [SASS](http://sass-lang.com/) code is also compiled through PostCSS in the same way. Simply use `.sass`/`.scss` files instead, and your stylesheets will pass through [node-sass](https://github.com/sass/node-sass) first.
 
+`@import` statements are parsed through SASS first, so you can use parent settings, SASS functions and variables in the calling `.sass`, too.
 
 <h2 id="local" title="Local modules">Local modules - preventing bleed-out</h2>
 
