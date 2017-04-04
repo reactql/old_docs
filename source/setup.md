@@ -8,7 +8,14 @@ description: How to deploy ReactQL for your next project
 
 This starter kit is built primarily for OS X, but should work with most flavours of \*nix and Windows (hopefully.)
 
-You'll need [Node.js](https://nodejs.org) installed.
+You'll need [Node.js](https://nodejs.org) and [git](https://git-scm.com/) installed.
+
+<h2 id="installation">Video walk-through</h2>
+
+---
+Watch install a new ReactQL project step-by-step:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fnpbUdJ2ttY" frameborder="0" allowfullscreen style="max-width: 100%"></iframe>
 
 <h2 id="new_project">Starting a new project</h2>
 
