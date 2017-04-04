@@ -13,7 +13,7 @@ You'll need [Node.js](https://nodejs.org) and [git](https://git-scm.com/) instal
 <h2 id="installation">Video walk-through</h2>
 
 ---
-Watch install a new ReactQL project step-by-step:
+How to install a new ReactQL project step-by-step:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fnpbUdJ2ttY" frameborder="0" allowfullscreen style="max-width: 100%"></iframe>
 
