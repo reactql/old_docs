@@ -3,6 +3,16 @@ title: FAQ
 description: Frequently Asked Questions
 ---
 
+<h2 id="tl_dr" title="TL;DR">**TL;DR:** I'm short on time. How do I run this now?</h2>
+
+---
+- Step 1: Start a new project with `git clone --depth 1 https://github.com/leebenson/reactql <project_folder>`
+- Step 2: `cd` into the folder, then install packages with `npm i`
+- Step 3: Run `npm start`
+
+This will spawn a dev server on [http://localhost:8080](http://localhost:8080)
+
+To build in production, do steps 1-2 above then run `npm run build-run`
 
 <h2 id="why_use">Why should I use ReactQL?</h2>
 
@@ -12,6 +22,14 @@ This starter kit is the product of over 2 years working with React, and GraphQL 
 IMO, this represents the best available tooling for web apps in 2017. I use this stuff every day in production, so you can be confident it'll be maintained and updated regularly.
 
 Use ReactQL if you want to skip the set-up, and get your next project up in record time.
+
+<h2 id="where">Where do I start coding?</h2>
+
+---
+`src/app.js` is the main React component, that both the browser and the serve will look to. Overwrite it with your own code.
+
+If you need to edit the build defaults, you can start digging into the `kit` dir which contains the 'under the hood' build stuff.  But that generally comes later.
+
 
 <h2 id="production_ready">Is this production ready?</h2>
 
@@ -43,20 +61,27 @@ Hopefully. I haven't tested it. But there's no OS X/Linux specific commands that
 ---
 There's currently no test library, so feel free to add your own.
 
-<h2 id="where">Where do I start coding?</h2>
+<h2 id="integration">Will ReactQL play nicely with themes or other frameworks?</h2>
 
 ---
-`src/app.js` is the main React component, that both the browser and the serve will look to. Overwrite it with your own code.
+ReactQL provides UI, flux/app state, routing, code bundling and SASS/PostCSS stylesheets out the box. It should play nicely with any framework that isn't opinionated about any of those things.
 
-If you need to edit the build defaults, you can start digging into the `kit` dir which contains the 'under the hood' build stuff.  But that generally comes later.
+If you're using a theme that's built on React, many times it will include its own competing build flow for the site -- e.g. [Gulp](http://gulpjs.com/) for build tasks, [LESS](http://lesscss.org/) for stylesheets, [Browsersync](https://www.browsersync.io/) for hot code reloading, etc. The work involved in translating that flow to ReactQL can vary. It depends how tightly coupled the components are to the flow the author provides.
 
-<h2 id="tl_dr" title="TL;DR">**TL;DR:** I haven't got time to read the set-up guide. How can I get this running _now_?</h2>
+Try to opt for components that are 'self-contained', that don't rely on specific build tools to compile. I'd encourage you to use components that you are in control of that don't require lots of third-party tooling, where possible. Sometimes, it makes sense to use HTML themes and manually translate to React instead.
+
+<h2 id="backend">I'm using [insert database/back-end X here]. Will ReactQL work?</h2>
 
 ---
-- Step 1: Start a new project with `git clone --depth 1 https://github.com/leebenson/reactql <project_folder>`
-- Step 2: `cd` into the folder, then install packages with `npm i`
-- Step 3: Run `npm start`
+ReactQL is designed to consume [GraphQL APIs](http://graphql.org/), and includes its own built-in web server to serve HTML on the front-end. It's completely agnostic about your back-end, and will connect to any API that can speak GraphQL.
 
-This will spawn a dev server on [http://localhost:8080](http://localhost:8080)
+If you're using a database such as MySQL or PostgreSQL, and you'd typically use REST to interact with a legacy system, consider building a GraphQL server that's designed to handle more dynamic requests instead.
 
-To build in production, do steps 1-2 above then run `npm run build-run`
+<h2 id="graphql_server">How do I build a GraphQL server?</h2>
+
+---
+GraphQL is a layer 'above' an existing database. It's agnostic about your back-end technology or stack, and simply defines the shape of queries it will accept. It's up to you to define how data is retrieved. There's lots of community tooling to handle translating queries to SQL, handling data loading, caching, etc.
+
+Check out [Awesome GraphQL](https://github.com/chentsulin/awesome-graphql) for a list of current libraries and resources for your back-end platform.
+
+FWIW, I generally use [Apollo Server](http://dev.apollodata.com/tools/) (Node.js) and [Graphene](http://graphene-python.org/) (Python) in my own projects for building GraphQL servers.

@@ -14,7 +14,7 @@ If you want to skip the tedious set-up code in your next front-end project, try 
 
 <h2 id="video">Video: Intro to ReactQL</h2>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hFm4PBQghgA" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hFm4PBQghgA" frameborder="0" allowfullscreen style="max-width: 100%"></iframe>
 
 <h2 id="stack">Features</h2>
 
