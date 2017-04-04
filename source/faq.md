@@ -85,3 +85,5 @@ GraphQL is a layer 'above' an existing database. It's agnostic about your back-e
 Check out [Awesome GraphQL](https://github.com/chentsulin/awesome-graphql) for a list of current libraries and resources for your back-end platform.
 
 FWIW, I generally use [Apollo Server](http://dev.apollodata.com/tools/) (Node.js) and [Graphene](http://graphene-python.org/) (Python) in my own projects for building GraphQL servers.
+
+> ReactQL is intended for apps that *consume* GraphQL, rather than supply it. Creating a GraphQL server is a back-end concern that's outside of the scope of this starter kit.
