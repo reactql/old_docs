@@ -12,6 +12,10 @@ It combines best-of-breed choices for UI, GraphQL data fetching, CSS and code bu
 
 If you want to skip the tedious set-up code in your next front-end project, try ReactQL.
 
+<h2 id="video">Video: Intro to ReactQL</h2>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hFm4PBQghgA" frameborder="0" allowfullscreen></iframe>
+
 <h2 id="stack">Features</h2>
 
 * [**React**](https://facebook.github.io/react/) for UI
