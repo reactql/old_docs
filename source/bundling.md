@@ -114,7 +114,11 @@ You can also include images in your CSS files, which will be processed by Webpac
 }
 ```
 
-> In production, images are processed through [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader), which minifies JPEG, GIF, PNG and SVG files via [imagemin](https://github.com/imagemin/imagemin) and copied to `[root]/dist/public/assets/img`. In development, images files are stored in RAM, but no files are copied to the physical filesystem.
+### Image compression
+
+In production, images are processed through [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader), which minifies JPEG, GIF, PNG and SVG files via [imagemin](https://github.com/imagemin/imagemin) and copied to `[root]/dist/public/assets/img`. In development, original images files are served from memory (and compression is skipped), and no files are copied to the physical filesystem.
+
+> By default, the JPG compression is set at 65% the quality of the original, and PNG has a target range of 65-90%. If images appear fuzzy, you can override this by editing [kit/webpack/base.js](https://github.com/leebenson/reactql/blob/master/kit/webpack/base.js)
 
 <h2 id="fonts">Fonts</h2>
 
@@ -212,3 +216,16 @@ Webpack will follow these steps:
 5. Imported fonts are copied to `dist/public/assets/fonts`.
 
 > Once assets have been built, you can run `npm run server` to start a live web server
+
+<h2 id="gzip">Gzip compression</h2>
+
+---
+Gzip is a standard compression technology supported by all major browsers, that can significantly reduce file sizes and data downloads, and provide users with a faster first load.
+
+Static assets that wind up in the `dist/` folder -- including CSS, images and fonts -- get gzip'd `.gz` versions automatically courtesy of the [Compression Webpack Plugin](https://webpack.js.org/plugins/compression-webpack-plugin/). Alongside the original, a new `[file].gz` will appear in the same folder -- e.g. `styles.css` gets a `styles.css.gz` too.
+
+The ReactQL web server that comes built-in will look for `.gz` file before serving the original.  If it finds one, it'll send that version down the wire instead.
+
+Since your assets are minified one-time in advance, this prevents CPU cycles crunching the data in 'real-time' for every visit.
+
+You don't need to do anything to activate this-- it's enabled autoamtically.
