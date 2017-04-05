@@ -34,12 +34,14 @@ export default props => (
 )
 ```
 
+> You can import `.css` (plain CSS), `.scss` &amp; `.sass` ([SASS](http://sass-lang.com/)) and `.less` ([LESS](http://lesscss.org/)) files. All three flavours export [localised classnames](#local).
+
 <h2 id="cssnext" title="CSSNext">Next-generation CSS parsing</h2>
 
 ---
-`.css` and `.sass / .scss` stylesheets are parsed through [CSSNext](http://cssnext.io/), using the default settings.
+All stylesheets - plain CSS, LESS or SASS - are all ultimately parsed through [CSSNext](http://cssnext.io/) as a final step.
 
-That means you can use things like nested statements out-the-box:
+That means you can use things like nested statements out-the-box in plain `.css`:
 
 ```css
 .anotherClassName {
@@ -58,27 +60,35 @@ As well as variable names, and other goodies:
 :root {
   --mainColor: red;
 }
-
 a {
   color: var(--mainColor);
 }
 ```
 
+> Since SASS and LESS use different syntax, you'll need to write styles that are compatible with the respective parsers before reaching the CSSNext step.
+
 Vendor prefixes will automatically be added, so you can write the bare CSS and let PostCSS worry about polyfilling browsers.
 
-> See [CSSNext](http://cssnext.io/) for more details and syntax.
+See [CSSNext](http://cssnext.io/) for more details and syntax.
 
 <h2 id="sass">SASS support</h2>
 
 ---
-[SASS](http://sass-lang.com/) code is also compiled through PostCSS in the same way. Simply use `.sass`/`.scss` files instead, and your stylesheets will pass through [node-sass](https://github.com/sass/node-sass) first.
+ReactQL has [SASS](http://sass-lang.com/) support. Any imported file with a `.scss` or `.sass` extension will be parsed through [node-sass](https://github.com/sass/node-sass) first.
 
-`@import` statements are parsed through SASS first, so you can use parent settings, SASS functions and variables in the calling `.sass`, too.
+`@import` statements are also parsed through SASS first, so you can use parent settings, SASS functions and variables in the calling `.sass / .scss`, too.
+
+<h2 id="less">LESS support</h2>
+
+---
+ReactQL offers [LESS](http://sass-lang.com/) support, too. `.less` files will be parsed through the Webpack [less-loader](https://github.com/webpack-contrib/less-loader).
+
+You can use any feature offered by the [LESS parser](http://lesscss.org/).
 
 <h2 id="local" title="Local modules">Local modules - preventing bleed-out</h2>
 
 ---
-By default, class styles in your CSS/SASS files will be exported as _local_ modules. Class names will be hashed to prevent bleeding out to your global namespace, and those same class names are then injected into the React code that is bundled for you. e.g:
+By default, class styles in your CSS/SASS/LESS files will be exported as _local_ modules. Class names will be hashed to prevent bleeding out to your global namespace, and those same class names are then injected into the React code that is bundled for you. e.g:
 
 ![CSS local classnames](images/classnames.png)
 
@@ -109,7 +119,7 @@ You don't need to do anything for this to happen- ReactQL takes care of it for y
 <h2 id="server">Server-side support</h2>
 
 ---
-CSS on the server is fully supported, so you can write your code without fear that stylesheets will break universal/server-side rendering.
+All stylesheet flavours are fully supported on the server, so you can write your code without fear that stylesheets will break universal/server-side rendering.
 
 In production, your styles will automatically be extracted out to a `dist/public/assets/css/style.css` and your server bundle will know the relevant 'hashed' classname to include in your `class=` attribute on your components.
 
