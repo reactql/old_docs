@@ -37,6 +37,29 @@ npm i
 
 In future, you'll be able to install globally via NPM and generate projects with a few other goodies such as code generation, deletion of the `.git` folder, etc.
 
+<h2 id="tidying">Tidying up after the starter kit</h2>
+
+---
+When you clone the ReactQL repository, you're inheriting version control and text files that are specific to the generic [reactql repo](https://github.com/leebenson/reactql). These files won't make sense to your new project.
+
+Clean them up with a command like this:
+
+**Linux/Mac:**
+```bash
+rm -rf .git README.md CHANGELOG LICENSE
+```
+
+**Windows:**
+```bash
+del /S /Q .git README.md CHANGELOG LICENSE
+```
+
+You can then initialise your own git repo in the usual way, so that making changes and pushing them won't attempt to update the parent starter kit:
+
+```bash
+git init
+```
+
 <h2 id="development">Running in development</h2>
 
 ---
@@ -79,4 +102,4 @@ npm run server
 
 ... which (by default) spawns a server at [http://localhost:4000](http://localhost:4000)
 
-Or, you can run the short-cut: `npm run build-run`, which has the same effect as running the above two commands separately.
+> Tip: `npm run build-run` has same effect as running the above two commands separately.
