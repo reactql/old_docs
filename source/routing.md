@@ -15,7 +15,6 @@ The syntax looks like this:
 ```jsx
 // From React Router
 import { Link, Route } from 'react-router-dom';
-
 const Component = (
   <div>
     <ul>
@@ -53,7 +52,6 @@ If you have a route like this:
 const Page = ({ match }) => (
   <h1>Changed route: {match.params.name}</h1>
 );
-
 // The 'shape' of the props we can expect to be passed by <Route>
 Page.propTypes = {
   match: React.PropTypes.shape({
@@ -81,7 +79,6 @@ To create hyperlinks between local routes, use the `<Link>` component provided b
 ```js
 // From React Router
 import { Link } from 'react-router-dom';
-
 const Component = (
   <div>
     <Link to="/page/contact">Contact</Link>
