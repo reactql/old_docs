@@ -6,7 +6,7 @@ description: How to deploy ReactQL for your next project
 
 <h2 id="what">System requirements</h2>
 
-This starter kit is built primarily for OS X, but should work with most flavours of \*nix and Windows (hopefully.)
+This starter kit should work with most flavours of OS X, \*nix and Windows.
 
 You'll need [Node.js](https://nodejs.org) and [git](https://git-scm.com/) installed.
 
