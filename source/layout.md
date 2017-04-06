@@ -38,7 +38,7 @@ For the most part though, you probably won't need to touch this stuff.
 ---
 This is where Webpack looks for entry points for building the browser and the server.
 
-Note: There's no separate entry for 'vendors', since the bundle is built automatically by testing whether packages reside in `node_modules`
+> Note: There's no separate entry for 'vendors', since the bundle is built automatically by testing whether packages reside in `node_modules`
 
 ### `kit/lib`
 
@@ -84,6 +84,6 @@ There are various configuration files that you'll find in the root:
 
 - `.gitignore`: Files to ignore when checking in your code.  This is built around the ReactQL starter kit, but you will probably want to use it as a base for your own code since it ignores the usual Node stuff, along with `dist` and some of the caching folders used by Webpack.
 
-- `package.json`: NPM packages used in this starter kit.  When you're extending this kit with your own code, you'll probably want to gut out the name, description and repo links and replace with your own. Just keep `dependencies` and `devDependencies` intact for the kit to continue to work.
+- `package.json`: NPM packages used in this starter kit.  When you're extending this kit with your own code, you'll probably want to change the name, description and repo links and replace with your own.
 
-- `webpack.config.babel.js`: The Webpack entry point.  This will invoke the config found in `kit/webpack` per the `npm run [...]` command that spawned it.
+- `webpack.config.babel.js`: The Webpack entry point.  This will invoke the config found in `kit/webpack` per the build command that spawned it.

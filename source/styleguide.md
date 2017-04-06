@@ -28,7 +28,7 @@ app.use(async (ctx, next) => { // <--- routes are defined as async functions
 });
 ```
 
-Async functions are 'native' in Node 7.8 and above. In earlier versions (and in the browser), a async/await polyfill will be added into your resulting bundle automatically.
+Async functions are 'native' in Node 7.6 and above. In earlier versions (and in the browser), a async/await polyfill will be added into your resulting bundle automatically.
 
 <h2 id="generators">Generators, for...of</h2>
 
