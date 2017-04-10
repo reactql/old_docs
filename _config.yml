@@ -31,44 +31,20 @@ sidebar_categories:
   Resources:
     - faq
     - support
-  #   - simple-example
-  #   - example-schema
-  # Usage:
-  #   - queries
-  #   - mutations
-  #   - subscriptions
-  #   - receiving-updates
-  #   - cache-updates
-  # API Reference:
-  #   - api
-  #   - api-graphql
-  #   - api-queries
-  #   - api-mutations
-  #   - api-server
-  # Recipes:
-  #   - auth
-  #   - pagination
-  #   - optimistic-ui
-  #   - fragments
-  #   - prefetching
-  #   - react-native
-  #   - redux
-  #   - webpack
-  #   - server-side-rendering
-github_repo: leebenson/reactql-docs
+github_repo: reactql/docs
 content_root: source
 
 typescript_api_box:
   data_file: docs.json
 
 social_links:
-  github: 'https://github.com/leebenson/reactql'
+  github: 'https://github.com/reactql/cli'
 
 # API keys
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://reactql.js.org
+url: http://reactql.org
 root: /docs
 permalink: :year/:month/:day/:title/
 permalink_defaults:

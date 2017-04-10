@@ -15,11 +15,9 @@ If your question is of a generic nature and doesn't relate strictly to ReactQL -
 <h2 id="stackoverflow">Spotted a bug?</h2>
 
 ---
-Use the [ReactQL issue tracker](https://github.com/leebenson/reactql/issues) on Github.
+Use the [ReactQL issue tracker](https://github.com/reactql/cli/issues) on Github.
 
-<h2 id="hire" title="Hire me">Want to hire me to build your project with ReactQL?</h2>
+<h2 id="hire" title="Hire me">Professional support for your project</h2>
 
 ---
-Contact me, Lee Benson, at the e-mail found on my [Github profile](https://github.com/leebenson) with details on your project and budget.
-
-> Please note: I'm generally not available for hire, but occasionally make exceptions for well-funded projects that I find interesting. I work remotely, exclusively; no office positions or recruiters, please.
+Contact me at the e-mail found on my [Github profile](https://github.com/leebenson) with details on your project and budget.

@@ -9,4 +9,4 @@ nav_links:
   'Main site':
     url: https://reactql.org
   'Github':
-    url: https://github.com/leebenson/reactql
+    url: https://github.com/reactql/cli
