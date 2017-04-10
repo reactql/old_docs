@@ -6,7 +6,7 @@ description: Modern starter kit for React, Apollo, Redux, React Router 4, Webpac
 
 <h2 id="what">What is ReactQL?</h2>
 
-ReactQL is a starter kit for React + GraphQL.
+ReactQL is a CLI tool for deploying a React + GraphQL starter kit on Mac, Windows and Linux.
 
 It combines best-of-breed choices for UI, GraphQL data fetching, CSS and code bundling, handles server-side rendering (SSR) properly, and is fast and extensible.
 
@@ -18,6 +18,7 @@ If you want to skip the tedious set-up code in your next front-end project, try 
 
 <h2 id="stack">Features</h2>
 
+- CLI for quickly starting a new project
 - [React](https://facebook.github.io/react/) for UI
 - [Apollo Client (React)](http://dev.apollodata.com/react/) for GraphQL
 - [React Router 4](https://github.com/ReactTraining/react-router/tree/v4) for declarative browser + server routes

@@ -6,13 +6,13 @@ description: Frequently Asked Questions
 <h2 id="tl_dr" title="TL;DR">**TL;DR:** I'm short on time. How do I run this now?</h2>
 
 ---
-- Step 1: Start a new project with `git clone --depth 1 https://github.com/leebenson/reactql <project_folder>`
-- Step 2: `cd` into the folder, then install packages with `npm i`
-- Step 3: Run `npm start`
+- Step 1: Install ReactQL with `npm i -g reactql`
+- Step 2: Create a new project with `reactql new`, and run through the wizard
+- Step 3: `cd` into your new project, and run `npm start`
 
 This will spawn a dev server on [http://localhost:8080](http://localhost:8080)
 
-To build in production, do steps 1-2 above then run `npm run build-run`
+To build in production, replace `npm start` with `npm run build-run`
 
 <h2 id="why_use">Why should I use ReactQL?</h2>
 

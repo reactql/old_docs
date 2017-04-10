@@ -6,59 +6,36 @@ description: How to deploy ReactQL for your next project
 
 <h2 id="what">System requirements</h2>
 
-This starter kit should work with most flavours of OS X, \*nix and Windows.
+ReactQL should work with most flavours of OS X, Linux and Windows.
 
-You'll need [Node.js](https://nodejs.org) and [git](https://git-scm.com/) installed.
+You'll need [Node.js](https://nodejs.org) (7.6+ recommended).
 
-<h2 id="installation">Video walk-through</h2>
+[Yarn](https://yarnpkg.com/) is optional, but recommended. It'll speed up building third-party modules for your new starter kit. If the `yarn` command is not found on your system, module bundling will fall-back to `npm` automatically.
+
+<h2 id="installation">Installation</h2>
 
 ---
-How to install a new ReactQL project step-by-step:
+Open Terminal (Mac) or Command Prompt (Windows) and run:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fnpbUdJ2ttY" frameborder="0" allowfullscreen style="max-width: 100%"></iframe>
+```bash
+npm i -g reactql
+```
+
+This will install the `reactql` CLI tool on your local machine.
 
 <h2 id="new_project">Starting a new project</h2>
 
 ---
-Simply clone the starter kit:
+Run:
 
 ```bash
-git clone --depth 1 https://github.com/leebenson/reactql <project_folder>
+reactql new
 ```
 
-... then install the required packages:
+... to run through the interactive project wizard.
 
-```bash
-cd <project_folder>
-npm i
-```
+ReactQL will create a new starter kit in the folder of your choosing, install the required NPM modules, and set everything up. When finished, usage instructions will be dumped to your console.
 
-... and start writing over it.
-
-In future, you'll be able to install globally via NPM and generate projects with a few other goodies such as code generation, deletion of the `.git` folder, etc.
-
-<h2 id="tidying">Tidying up after the starter kit</h2>
-
----
-When you clone the ReactQL repository, you're inheriting version control and text files that are specific to the generic [reactql repo](https://github.com/leebenson/reactql). These files won't make sense to your new project.
-
-Clean them up with a command like this:
-
-**Linux/Mac:**
-```bash
-rm -rf .git README.md CHANGELOG LICENSE
-```
-
-**Windows:**
-```bash
-del /S /Q .git README.md CHANGELOG LICENSE
-```
-
-You can then initialise your own git repo in the usual way, so that making changes and pushing them won't attempt to update the parent starter kit:
-
-```bash
-git init
-```
 
 <h2 id="development">Running in development</h2>
 
@@ -70,7 +47,7 @@ In development, ReactQL will:
 - Enable sourcemaps for your CSS and Javascript code
 - Activate hot code reloading; any changes to your code will update automatically in the browser
 
-To activate development mode, run:
+To activate development mode, `cd` to your starter kit folder, and run:
 
 ```bash
 npm start
@@ -103,3 +80,20 @@ npm run server
 ... which (by default) spawns a server at [http://localhost:4000](http://localhost:4000)
 
 > Tip: `npm run build-run` has same effect as running the above two commands separately.
+
+<h2 id="upgrading">Upgrading</h2>
+
+---
+Every time you run `reactql`, the tool will check the NPM repository to see if a new version is available. If it is, a message will be displayed on your console.
+
+To upgrade the ReactQL cli tool, simply re-run the original installation command:
+
+```bash
+npm i -g reactql
+```
+
+This will grab the latest version of the `reactql` tool, and overwrite the old one.
+
+Since the starter kit is self-contained, there are no additional dependencies to manage -- the next time you run `reactql`, you'll be deploying the latest version.
+
+> Note: There's no way to upgrade an active project to the latest version, since doing so might require changes to code you've written that modifies the original starter kit. The best way to upgrade is to create a new project, copy over your custom files, and add any of your code changes manually (particularly code you may have extended inside the `kit` folder)

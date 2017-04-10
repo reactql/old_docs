@@ -10,11 +10,6 @@ This starter has been designed to provide you with a few skeletal pieces to get 
 
 Here's the folder layout:
 
-## `.git`
-
----
-Git folder.  By default, this points to the ReactQL starter kit, so you can safely delete this if you want to initialise your own git repo and start contributing to it.
-
 ## `config`
 
 ---
