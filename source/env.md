@@ -27,7 +27,7 @@ class SomeComponent extends React.PureComponent {
     if (!SERVER) {
       try {
         // Load a module - this will be skipped on the server
-        await someModule = import('someDOMModule');
+        const someModule = await import('someDOMModule');
         // Assume we are manipulating some local markup...
         this.refToTag = someModule.doSomething();
       } catch (e) {
