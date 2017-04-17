@@ -34,7 +34,7 @@ reactql new
 
 ... to run through the interactive project wizard.
 
-ReactQL will create a new starter kit in the folder of your choosing, install the required NPM modules, and set everything up. When finished, usage instructions will be dumped to your console.
+ReactQL will download the [starter kit source](https://github.com/reactql/kit) from Github, extract the archive to your chosen folder, install the required NPM modules, and set everything up. When finished, usage instructions will be dumped to your console.
 
 
 <h2 id="development">Running in development</h2>
@@ -94,6 +94,6 @@ npm i -g reactql
 
 This will grab the latest version of the `reactql` tool, and overwrite the old one.
 
-Since the starter kit is self-contained, there are no additional dependencies to manage -- the next time you run `reactql`, you'll be deploying the latest version.
+Note: The [starter kit source code](https://github.com/reactql/kit) is managed in a separate repo. Every time you run `reactql new`, the latest source code will be downloaded, meaning each new starter kit will lose the latest kit -- even if you don't upgrade the CLI tool.
 
-> Note: There's no way to upgrade an active project to the latest version, since doing so might require changes to code you've written that modifies the original starter kit. The best way to upgrade is to create a new project, copy over your custom files, and add any of your code changes manually (particularly code you may have extended inside the `kit` folder)
+> Upgrading: There's no way to upgrade an _active_ project to the latest version, since doing so might require changes to code you've written that modifies the original starter kit. The best way to upgrade is to create a new project, copy over your custom files, and add any of your code changes manually (particularly code you may have extended inside the `kit` folder)

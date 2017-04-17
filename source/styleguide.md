@@ -52,6 +52,83 @@ function* getPages() {
 
 In the majority of cases, you probably don't want to write 'blocking' code that awaits Promises sequentially, but ReactQL doesn't get in the way of legitimate use cases.
 
+<h2 id="decorators">Decorators</h2>
+
+---
+@decorator syntax is enabled through [babel-plugin-transform-decorators-legacy](https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy), so you can decorate classes like so:
+
+```js
+@graphql(gql`
+  query TodoAppQuery {
+    todos {
+      id
+      text
+    }
+  }
+`)
+export default class TodoApp extends PureComponent {
+  render() {
+    const { data: { todos } } = this.props;
+    return (
+      <ul>
+        {todos.map(({ id, text }) => (
+          <li key={id}>{text}</li>
+        ))}
+      </ul>
+    );
+  }
+}
+```
+
+<h2 id="stateless" title="Stateless React">Use stateless React components</h2>
+
+----
+When you're writing React components that only deal with `props` or `context`, it's usually best to write them as 'stateless' components like this:
+
+```js
+const Button = props => (
+  <button className={props.active ? 'active' : ''}>Some text</button>
+);
+```
+
+React will pass `props` as the first parameter, and `context` as the second. This allows you to avoid writing classes with a `render()` method, if all you want to do is create a simple component.
+
+On the flip-side, this _will_ raise an error with the linter:
+
+```js
+// Don't do this -- it will result in a linting error!
+class Button extends React.Component {
+  render() {
+    return (
+      <button className={this.props.active ? 'active' : ''}>Some text</button>
+    );
+  }
+}
+```
+
+Alternatively, if you _do_ want to use classes with a single `render()` method, extend from `React.PureComponent` and make sure you're using at least one of `this.props` or `this.context` to avoid linting errors-- this is especially useful if you want to use [decorators](styleguide.html#decorators), like this:
+
+```js
+@graphql(query)
+// This will work fine -- the linter will be happy
+class GraphQLMessage extends React.PureComponent {
+  // It's okay to have a single `render` here, so long as we are extending
+  // from `React.PureComponent` and are using at least `this.props` or
+  // `this.context`
+  render() {
+    const { data } = this.props;
+    const message = data.allMessages && data.allMessages[0].text;
+    const isLoading = data.loading ? 'yes' : 'nope';
+    return (
+      <div>
+        <h2>Message from GraphQL server: <em>{message}</em></h2>
+        <h2>Currently loading?: {isLoading}</h2>
+      </div>
+    );
+  }
+}
+```
+
 <h2 id="multiple_react" title="Multiple React per page">Multiple React components per page</h2>
 
 ----
@@ -116,7 +193,6 @@ if (SERVER) {
   // be eliminated by Webpack on the browser, won't wind up in the browser bundle
   someModule = require('someModule').default;
 }
-
 // `someModule` will be `undefined` in the browser, but a usable module on the server
 ```
 

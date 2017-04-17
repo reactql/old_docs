@@ -18,7 +18,7 @@ If you want to skip the tedious set-up code in your next front-end project, try 
 
 <h2 id="stack">Features</h2>
 
-- CLI for quickly starting a new project
+- [ReactQL CLI](https://github.com/reactql/cli) for quickly starting a new project
 - [React](https://facebook.github.io/react/) for UI
 - [Apollo Client (React)](http://dev.apollodata.com/react/) for GraphQL
 - [React Router 4](https://github.com/ReactTraining/react-router/tree/v4) for declarative browser + server routes
