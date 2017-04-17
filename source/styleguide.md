@@ -106,7 +106,7 @@ class Button extends React.Component {
 }
 ```
 
-Alternatively, if you _do_ want to use classes with a single `render()` method, extend from `React.PureComponent` and make sure you're using at least one of `this.props` or `this.context` to avoid linting errors-- this is especially useful if you want to use [decorators](styleguide.html#decorators), like this:
+Alternatively, if you _do_ want to use classes with a single `render()` method, extend from `React.PureComponent` and make sure you're using at least one of `this.props` or `this.context` to avoid linting errors-- this is especially useful if you want to use [decorators](#decorators), like this:
 
 ```js
 @graphql(query)
