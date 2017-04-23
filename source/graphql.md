@@ -6,7 +6,7 @@ description: How to write components that talk to a GraphQL server
 
 When running `npm start`, you'll see an example of GraphQL talking to a live server end-point hosted at [graph.cool](https://www.graph.cool/)
 
-Check out [src/app.js](https://github.com/leebenson/reactql/blob/master/src/app.js) to see this working in action.
+Check out [src/app.js](https://github.com/reactql/kit/blob/master/src/app.js) to see this working in action.
 
 The cool thing is, if you run the component on the server via `npm run build-run` and navigate to [http://localhost:4000](http://localhost:4000), you'll see the GraphQL response directly in the source code, too!
 
@@ -27,7 +27,7 @@ export const APOLLO = {
 
 Both the browser and server entry points will create an Apollo client based on the above config.
 
-Then, in your [src/app.js](https://github.com/leebenson/reactql/blob/master/src/app.js) file, we define the GraphQL query to grab the data we need:
+Then, in your [src/app.js](https://github.com/reactql/kit/blob/master/src/app.js) file, we define the GraphQL query to grab the data we need:
 
 **src/app.js**
 ```js
@@ -62,7 +62,7 @@ const Message = ({ data }) => {
 
 Now, for use in development, we can add custom `propTypes` to the component so that React knows what to expect.
 
-In [kit/lib/apollo.js](https://github.com/leebenson/reactql/blob/master/kit/lib/apollo.js), we have a custom `mergeData()` helper that will provide us with the `data.loading` boolean, and allow us to merge in expected data.
+In [kit/lib/apollo.js](https://github.com/reactql/kit/blob/master/kit/lib/apollo.js), we have a custom `mergeData()` helper that will provide us with the `data.loading` boolean, and allow us to merge in expected data.
 
 In this example, we're expecting an `allMessages` array which will contain an object with `text` property, containing our message received from our GraphQL endpoint.
 
