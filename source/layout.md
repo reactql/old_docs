@@ -45,7 +45,7 @@ Custom libraries built for ReactQL.  You'll find custom helpers for Redux and Ap
 ---
 Server-side React component views for rendering the full HTML.
 
-Contains an [`ssr.js`](https://github.com/leebenson/reactql/blob/master/kit/views/ssr.js) file with a `<Html>` component, that generates the HTML, inserts title and meta tags, and dehydrates Redux store which the client uses to seed the initial application state.
+Contains an [`ssr.js`](https://github.com/reactql/kit/blob/master/kit/views/ssr.js) file with a `<Html>` component, that generates the HTML, inserts title and meta tags, and dehydrates Redux store which the client uses to seed the initial application state.
 
 ### `kit/webpack`
 
