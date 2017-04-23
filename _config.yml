@@ -20,9 +20,10 @@ sidebar_categories:
     - layout
   Writing Code:
     - styleguide
-    - css
     - modules
     - graphql
+  CSS Styles:
+    - css
   Concepts:
     - routing
     - bundling
