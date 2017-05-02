@@ -4,6 +4,10 @@ sidebar_title: Installation
 description: How to deploy ReactQL for your next project
 ---
 
+<h2 id="video" title="Video: Installing ReactQL">Video: Installing ReactQL (Windows, Mac, Linux)</h2>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gOMHRBonsUQ" frameborder="0" allowfullscreen style="max-width: 100%"></iframe>
+
 <h2 id="what">System requirements</h2>
 
 ReactQL should work with most flavours of OS X, Linux and Windows.
@@ -36,6 +40,12 @@ reactql new
 
 ReactQL will download the [starter kit source](https://github.com/reactql/kit) from Github, extract the archive to your chosen folder, install the required NPM modules, and set everything up. When finished, usage instructions will be dumped to your console.
 
+<h2 id="es6_or_typescript">Typescript support</h2>
+
+---
+You can choose from ES6 Javascript or Typescript flavours of the starter kit.
+
+See the [Typescript page](typescript.html) for key differences.
 
 <h2 id="development">Running in development</h2>
 
