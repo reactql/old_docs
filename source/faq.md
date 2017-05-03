@@ -36,7 +36,7 @@ If you need to edit the build defaults, you can start digging into the `kit` dir
 ---
 Some of the third-party packages in my stack may be in alpha or beta stages, so it's up to you to evaluate if they're a good fit for your application.
 
-I personally use this starter kit for every new React project I undertake, many of which are running successfully under heavy production load -- so I'm quite comfortable with the tech choices.
+I personally use this starter kit as a basis for several heavy product loads-- so I'm quite comfortable with the tech choices.
 
 <h2 id="projects" title="What projects...">What kind of projects is ReactQL a good starter for?</h2>
 
@@ -51,10 +51,12 @@ Anything 'front end' that's backed by a GraphQL server. I typically break my pro
 
 I'd generally recommend a similar layout to keep your code light and maintainable. With that said, if you want Node.js to handle both your front and back-office concerns, there's no reason you couldn't add a GraphQL server to `kit/entry/server.js` and handle your API requests from the same host.
 
-<h2 id="windows">Will this work on Windows?</h2>
+<h2 id="windows">Is this Windows compatible?</h2>
 
 ---
-Hopefully. I haven't tested it. But there's no OS X/Linux specific commands that are used to build stuff, so it _should_ work.
+Yes. The kit has been tested on Windows 10, but will probably work on other versions, too. Environment variables and paths are written to be Windows-compatible.
+
+> Note: Node.js is generally less performant on Windows vs. Mac or Linux distros, so expect build times to be up to 2-3x slower. This shouldn't generally affect your development environment (other than start-up times).
 
 <h2 id="missing">What's missing?</h2>
 

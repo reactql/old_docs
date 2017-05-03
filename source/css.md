@@ -45,10 +45,10 @@ That means you can use things like nested statements out-the-box in plain `.css`
 
 ```css
 .anotherClassName {
-  & h1 {
+  h1 {
     text-size: 2em;
   }
-  & p {
+  p {
     color: green;
   }
 }
@@ -122,7 +122,7 @@ If you want to override the 'local by default' classnames, you have two options:
 Simply prefix `:global` before any rule and it'll be made available across your entire app:
 
 ```css
-:global (.thisClassWontRename) {
+:global .thisClassWontRename {
   font-color: blue;
 }
 ```
@@ -131,7 +131,7 @@ In this case, `.thisClassWontRename` will be the exact name used in the output t
 
 `:global` will work across all parsers -- plain CSS, SASS and LESS -- because all CSS is ultimately parsed through the [CSS loader](https://github.com/webpack-contrib/css-loader).
 
-> Note: Prefixing with `:global` isn't fool-proof, especially if you're using complicated CSS rules in conjunction with `@at-root` in SASS. It's possible that you can 'break' out of `:global` and therefore get a local hashed classname, or break the CSS loader compilation. In that case, use the second option (below)
+> Note: Avoid using `@import` statements inside of a `:global` block. Imports are intended to be top-level statements, which means they will 'break out' of a surrounding global block and wind up as local modules. Instead, use the method below.
 
 **2. Use `*.global.(css|sass|scss|less)` files**
 

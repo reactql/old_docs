@@ -3,6 +3,10 @@ title: Project layout
 description: Where your code lives, and how it's wired up
 ---
 
+<h2 id="video" title="Video: Project layout">Video: Project folder/file tour</h2>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vNcMNb2A5T8" frameborder="0" allowfullscreen style="max-width: 100%"></iframe>
+
 <h2 id="folders">Folders</h2>
 
 ---
@@ -47,16 +51,19 @@ Server-side React component views for rendering the full HTML.
 
 Contains an [`ssr.js`](https://github.com/reactql/kit/blob/master/kit/views/ssr.js) file with a `<Html>` component, that generates the HTML, inserts title and meta tags, and dehydrates Redux store which the client uses to seed the initial application state.
 
+It also contains [`webpack.html`](https://github.com/reactql/kit/blob/master/kit/views/webpack.html), that's used by the Webpack to load a minimal bootstrap when running a local development server.
+
 ### `kit/webpack`
 
 ---
 Webpack configuration files, notably:
 
 - `base.js`: Base configuration that all others inherit from
-- `eslint.js`: Entry point for the linter, to properly follow local module folders and avoid false positives
 - `browser.js`: Base configuration for the browser.  Inherits from base, and is extended by browser_dev and browser_prod
 - `browser_dev.js`: Config for the browser spawned at [http://localhost:8080](http://localhost:8080) when running `npm start`
 - `browser_prod.js`: Production browser bundling.  Minifies and crunches code and images, gzips assets, removes source maps and debug flags, builds your browser bundles ready for production.  This is automatically served back to the client when you run `npm run build-run`
+- `common.js`: Common objects shared amongst multiple Webpack config files, to save keystrokes
+- `eslint.js`: Entry point for the linter, to properly follow local module folders and avoid false positives
 - `server.js`: Node.js web server bundle.  Even though we're running this through Node, Webpack still gets involved and properly handles inline file and CSS loading, and generates a build that works with your locally installed Node.js. You can build the server with `npm run build-server` or build and run with `npm run build-run`
 
 ## `src`
@@ -80,12 +87,18 @@ There are various configuration files that you'll find in the root:
 
 - `.babelrc`:  This exists solely to transpile the ES6 Webpack config into something Node.js can natively run. It has no bearing on the [Babel](http://babeljs.io/) config that's used to transpile your Webpack code, so you can safely this leave alone.
 
-- `.eslint.js`: [ESLint](http://eslint.org/) configuration. If your editor/IDE has ESLint installed, it will use this file to lint your code.  See "[Styleguide](styleguide.html)" to see the syntax rules that ReactQL lints your code with.
+- `.editorconfig`: Whitespace and syntax options for your editor/IDE. You probably won't need to change this, unless you prefer tabs vs. spaces or need to change the encoding of saved files.
 
 - `.eslintignore`: Files the linter can safely ignore.
 
+- `.eslint.js`: [ESLint](http://eslint.org/) configuration. If your editor/IDE has ESLint installed, it will use this file to lint your code.  See "[Styleguide](styleguide.html)" to see the syntax rules that ReactQL lints your code with.
+
 - `.gitignore`: Files to ignore when checking in your code.  This is built around the ReactQL starter kit, but you will probably want to use it as a base for your own code since it ignores the usual Node stuff, along with `dist` and some of the caching folders used by Webpack.
+
+- `browserlist`: Browser target versions, so Webpack knows which polyfills to add. By default, we're targeting the last 3 versions of all major browsers.
 
 - `package.json`: NPM packages used in this starter kit.  When you're extending this kit with your own code, you'll probably want to change the name, description and repo links and replace with your own.
 
 - `webpack.config.babel.js`: The Webpack entry point.  This will invoke the config found in `kit/webpack` per the build command that spawned it.
+
+- `yarn.lock`: If you have the [Yarn package manager](https://yarnpkg.com/en/) installed, the ReactQL CLI tool will use this lock file to download and bundle required NPM modules faster.
