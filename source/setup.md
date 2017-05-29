@@ -52,18 +52,17 @@ See the [Typescript page](typescript.html) for key differences.
 ---
 In development, ReactQL will:
 
-- Run a development server at [http://localhost:8080](http://localhost:8080)
-- Build a browser-side bundle only
+- Run a 'hot reloading' Webpack dev server at [http://localhost:8080](http://localhost:8080)
+- Run a development web server for [server-side rendering](ssr.html) at [http://localhost:8081](http://localhost:8081)
+- Build both browser-side and server-side development bundles
 - Enable sourcemaps for your CSS and Javascript code
-- Activate hot code reloading; any changes to your code will update automatically in the browser
+- Activate hot code reloading. Any changes to your code will update automatically in your Webpack dev server; to get a new server-side first page render from your web server, just hit refresh in the browser.
 
 To activate development mode, `cd` to your starter kit folder, and run:
 
 ```bash
 npm start
 ```
-
-Changes to your React components/styles will update in the browser in real-time, with no refreshes. Changes to other code may require a refresh.
 
 <h2 id="production">Bundling for production</h2>
 
@@ -96,13 +95,21 @@ npm run server
 ---
 If you only wish to target a browser and you don't care about server-side rendering or running a web server, you can build assets with:
 
-`npm run build-browser-only`
+`npm run build-static`
 
 In addition to the regular Javascript, CSS and asset pipeline, the above command will also generate a static `index.html` file that will automatically load stylesheets and Javascript in the browser.
 
 You can then upload the contents of `dist/public` to any static file host (S3, Netlify, Github pages, etc) or FTP to your root web directory on any host, and you'll have a complete application, minus the web server.
 
 > Note: Your `index.html` file will contain only the minimum needed to bootstrap your application -- your JS code will do the rest. You can customise the HTML that is sent back by editing `kit/views/browser.html`. Note that CSS and JS will be injected automatically by Webpack into the `<head>` and footer sections of the page.
+
+To run a local static web server (for testing your bundle), run:
+
+`npm run static`
+
+Or, you can combine the above two commands with:
+
+`npm run build-static-run`
 
 <h2 id="upgrading">Upgrading</h2>
 
@@ -117,6 +124,6 @@ npm i -g reactql
 
 This will grab the latest version of the `reactql` tool, and overwrite the old one.
 
-Note: The [starter kit source code](https://github.com/reactql/kit) is managed in a separate repo. Every time you run `reactql new`, the latest source code will be downloaded, meaning each new starter kit will lose the latest kit -- even if you don't upgrade the CLI tool.
+Note: The [starter kit source code](https://github.com/reactql/kit) (and [Typescript version](https://github.com/reactql/kit)) is managed in a separate repo. The version of the kit that's installed with `react new` is hard-coded and versioned along with the CLI. To get the latest kit, bump your CLI version using `npm i -g reactql`. 
 
 > Upgrading: There's no way to upgrade an _active_ project to the latest version, since doing so might require changes to code you've written that modifies the original starter kit. The best way to upgrade is to create a new project, copy over your custom files, and add any of your code changes manually (particularly code you may have extended inside the `kit` folder)

@@ -10,9 +10,9 @@ description: Frequently Asked Questions
 - Step 2: Create a new project with `reactql new`, and run through the wizard
 - Step 3: `cd` into your new project, and run `npm start`
 
-This will spawn a dev server on [http://localhost:8080](http://localhost:8080)
+This will spawn a 'hot reloading' client dev server on [http://localhost:8080](http://localhost:8080), and a full development web server with [server-side rendering](ssr.html) [http://localhost:8081](http://localhost:8081)
 
-To build in production, replace `npm start` with `npm run build-run`
+To build and run in production, replace `npm start` with `npm run build-run`
 
 <h2 id="why_use">Why should I use ReactQL?</h2>
 
@@ -34,7 +34,7 @@ If you need to edit the build defaults, you can start digging into the `kit` dir
 <h2 id="production_ready">Is this production ready?</h2>
 
 ---
-Some of the third-party packages in my stack may be in alpha or beta stages, so it's up to you to evaluate if they're a good fit for your application.
+Some of the third-party packages in my stack may be in beta or pre-beta stages, so it's up to you to evaluate if they're a good fit for your application.
 
 I personally use this starter kit as a basis for several heavy product loads-- so I'm quite comfortable with the tech choices.
 

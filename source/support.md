@@ -15,7 +15,11 @@ If your question is of a generic nature and doesn't relate strictly to ReactQL -
 <h2 id="stackoverflow">Spotted a bug?</h2>
 
 ---
-Use the [ReactQL issue tracker](https://github.com/reactql/cli/issues) on Github.
+Run into a problem with the `reactql` command line utility? Use the [ReactQL CLI issue tracker](https://github.com/reactql/cli/issues) on Github.
+
+Bug related to the ReactQL kit? The [ReactQL kit issue tracker](https://github.com/reactql/kit/issues) is the one to use.
+
+(For Typescript kit issues, use [this one](https://github.com/reactql/kit.ts/issues).)
 
 <h2 id="hire" title="Hire me">Professional support for your project</h2>
 

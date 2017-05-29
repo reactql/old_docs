@@ -4,13 +4,13 @@ sidebar_title: GraphQL components
 description: How to write components that talk to a GraphQL server
 ---
 
-When running `npm start`, you'll see an example of GraphQL talking to a live server end-point hosted at [graph.cool](https://www.graph.cool/)
+When running `npm start` and visiting the Webpack dev server at [http://localhost:8080](http://localhost:8080/) you'll see an example of GraphQL talking to a live server end-point hosted at [graph.cool](https://www.graph.cool/)
 
 Check out [src/app.js](https://github.com/reactql/kit/blob/master/src/app.js) to see this working in action.
 
-The cool thing is, if you run the component on the server via `npm run build-run` and navigate to [http://localhost:4000](http://localhost:4000), you'll see the GraphQL response directly in the source code, too!
+The cool thing is, if you visit your server-side web server at [http://localhost:8081](http://localhost:8081/), you'll see the GraphQL response directly in the source code, too!
 
-That's because ReactQL automatically requests data from GraphQL _before_ rendering the resulting HTML back to the browser.
+That's because ReactQL automatically requests data from GraphQL _before_ rendering the resulting HTML back to the browser, in server mode.
 
 Furthermore, it will send back the initial Redux state with the HTML, too, ensuring that the browser doesn't re-request data it already has.
 

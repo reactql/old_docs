@@ -42,7 +42,7 @@ This is where Webpack looks for entry points for building the browser and the se
 ### [`kit/lib`](https://github.com/reactql/kit/blob/master/kit/lib)
 
 ---
-Custom libraries built for ReactQL.  You'll find custom helpers for Redux and Apollo for creating new stores, and building connections to your GraphQL endpoint via Apollo.
+Custom libraries built for ReactQL.  You'll find custom helpers for Redux and Apollo for creating new stores, building connections to your GraphQL endpoint via Apollo and more.
 
 ### [`kit/views`](https://github.com/reactql/kit/blob/master/kit/views)
 
@@ -51,7 +51,7 @@ Server-side React component views for rendering the full HTML.
 
 Contains the following:
 
-- [`browser.html`](https://github.com/reactql/kit/blob/master/kit/views/browser.html): Used when you run `npm run build-browser-only` to generate a static `dist/public/index.html` file that bootstraps your CSS and Javascript code. `<script>` and `<link>` is automatically injected by Webpack to point to the latest assets.
+- [`browser.html`](https://github.com/reactql/kit/blob/master/kit/views/browser.html): Used when [building a static bundle](setup.html#browser), this file is used to generate the resulting `dist/public/index.html` file that bootstraps your CSS and Javascript code. `<script>` and `<link>` is automatically injected by Webpack to point to the latest assets.
 
 - [`ssr.js`](https://github.com/reactql/kit/blob/master/kit/views/ssr.js): The `<Html>` server-side root component. Generates the HTML, inserts title and meta tags, and dehydrates Redux store which the client uses to seed the initial application state.
 
@@ -66,10 +66,13 @@ Webpack configuration files, notably:
 - [`browser.js`](https://github.com/reactql/kit/blob/master/kit/webpack/browser.js): Base configuration for the browser.  Inherits from base, and is extended by browser_dev and browser_prod
 - [`browser_dev.js`](https://github.com/reactql/kit/blob/master/kit/webpack/browser_dev.js): Config for the browser spawned at [http://localhost:8080](http://localhost:8080) when running `npm start`
 - [`browser_prod.js`](https://github.com/reactql/kit/blob/master/kit/webpack/browser_prod.js): Production browser bundling.  Minifies and crunches code and images, gzips assets, removes source maps and debug flags, builds your browser bundles ready for production.  This is automatically served back to the client when you run `npm run build-run`
-- [`browser_only.js`](https://github.com/reactql/kit/blob/master/kit/webpack/browser_only.js): Extends from [`browser_prod.js`](https://github.com/reactql/kit/blob/master/kit/webpack/browser_prod.js), by also creating a static `index.html` file that allows you to host a browser-only version of your app -- no web server required
 - [`common.js`](https://github.com/reactql/kit/blob/master/kit/webpack/common.js): Common objects shared amongst multiple Webpack config files, to save keystrokes
+- [`dev.js`](https://github.com/reactql/kit/blob/master/kit/webpack/dev.js): Common settings for building a development bundle, that other config files can extend from
 - [`eslint.js`](https://github.com/reactql/kit/blob/master/kit/webpack/eslint.js): Entry point for the linter, to properly follow local module folders and avoid false positives
-- [`server.js`](https://github.com/reactql/kit/blob/master/kit/webpack/server.js): Node.js web server bundle.  Even though we're running this through Node, Webpack still gets involved and properly handles inline file and CSS loading, and generates a build that works with your locally installed Node.js. You can build the server with `npm run build-server` or build and run with `npm run build-run`
+- [`server.js`](https://github.com/reactql/kit/blob/master/kit/webpack/server.js): Node.js web server bundle.  Even though we're running this through Node, Webpack still gets involved and properly handles inline file and CSS loading, and generates a build that works with your locally installed Node.js. You can build the server with `npm run build-server` or build and run with `npm run build-run`. Both the development and production web servers extend this config
+- [`server_dev.js`](https://github.com/reactql/kit/blob/master/kit/webpack/server_dev.js): Used when you run `npm start` to create a development web server for [server-side rendering](ssr.html). When you run that command make a change to your project code, the web server will automatically re-build and restart
+- [`server_prod.js`](https://github.com/reactql/kit/blob/master/kit/webpack/server_prod.js): When you run `npm run build`, this config file is used to generate a production web server bundle
+- [`static.js`](https://github.com/reactql/kit/blob/master/kit/webpack/static.js): Extends from [`browser_prod.js`](https://github.com/reactql/kit/blob/master/kit/webpack/browser_prod.js), by also creating a static `index.html` file that allows you to host a browser-only version of your app -- no web server required
 
 ## [`src`](https://github.com/reactql/kit/blob/master/src)
 

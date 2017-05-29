@@ -38,9 +38,9 @@ Here are the key differences:
 <h2 id="how">How ReactQL implements SSR</h2>
 
 ---
-ReactQL includes a [Koa web server](http://koajs.com/) in [production mode](bundling.html#production), which is defined in [`kit/entry/server.js`](https://github.com/leebenson/reactql/blob/master/kit/entry/server.js).
+ReactQL includes a [Koa web server](http://koajs.com/). In [production mode](bundling.html#production), the entry point Webpack will use to generate your web server code is [`kit/entry/server_prod.js`](https://github.com/reactql/kit/blob/master/kit/entry/server_prod.js). In development, it's [`kit/entry/server_dev.js`](https://github.com/reactql/kit/blob/master/kit/entry/server_dev.js)
 
-Navigating to a server route returns a full HTML dump to the client.
+In both modes, navigating to a server route returns a full HTML dump to the client.
 
 An example response-- notes below:
 
@@ -124,7 +124,7 @@ To make it easier to manage your own application state, ReactQL includes custom 
 <h3 id="bundling">5. Code bundling</h3>
 
 ---
-Two client-side bundles are produced in production, and loaded by your browser:
+Two client-side bundles are produced by the server config, and loaded by your browser:
 
 1. `vendor.js`. Third-party code from NPM modules that are used in the starter kit, or imported into your own code.
 
