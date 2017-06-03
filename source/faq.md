@@ -49,7 +49,11 @@ Anything 'front end' that's backed by a GraphQL server. I typically break my pro
 
 - **Microservices**.  Smaller pieces of the stack that do one thing, and do it well. The API server is responsible for talking to this stuff.  Again, ReactQL doesn't really get a look in.
 
-I'd generally recommend a similar layout to keep your code light and maintainable. With that said, if you want Node.js to handle both your front and back-office concerns, there's no reason you couldn't add a GraphQL server to `kit/entry/server.js` and handle your API requests from the same host.
+I'd generally recommend a similar layout to keep your code light and maintainable.
+
+With that said, if you want Node.js to handle both your front and back-office concerns, there's no reason you couldn't add a GraphQL server to `kit/entry/server.js` and handle your API requests from the same host.
+
+You can see an example of [adding a GraphQL server here](https://github.com/reactql/examples/tree/master/graphql-server)
 
 <h2 id="windows">Is this Windows compatible?</h2>
 
@@ -88,4 +92,4 @@ Check out [Awesome GraphQL](https://github.com/chentsulin/awesome-graphql) for a
 
 FWIW, I generally use [Apollo Server](http://dev.apollodata.com/tools/) (Node.js) and [Graphene](http://graphene-python.org/) (Python) in my own projects for building GraphQL servers.
 
-> ReactQL is intended for apps that *consume* GraphQL, rather than supply it. Creating a GraphQL server is a back-end concern that's outside of the scope of this starter kit.
+> ReactQL is intended for apps that *consume* GraphQL, rather than supply it. Creating a GraphQL server is a back-end concern that's outside of the scope of this starter kit. However, adding one to your existing server - if that's what you want to do - is trivial. Check out [this example project](https://github.com/reactql/examples/tree/master/graphql-server) for the code.
